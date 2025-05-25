@@ -10,7 +10,7 @@ document.getElementById("tripForm").addEventListener("submit", async function (e
 
   outputDiv.innerHTML = "⏳ Generating";
 
-  const apiKey = ""; // 🔑 Replace with your real API key
+  const apiKey = "tgp_v1_b9KWNtGAZjAWI4dI8RnlQA5eyCKMKyMDQVbXPiYzvNQ"; // 🔑 Replace with your real API key
   const prompt = `
 You are a smart AI travel planner.
 
