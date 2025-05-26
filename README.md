@@ -1,4 +1,4 @@
-🌍 Go Guide - AI Travel Planner (goguideai.vercel.app)
+🌍 Go Guide - AI Travel Planner (https://goguideai.vercel.app)
 
 Go Guide is a simple, responsive web app that uses AI to help users plan personalized travel itineraries. Users input their trip details—like source, destination, number of days, budget, and interests—and the app fetches a detailed, day-wise itinerary using a powerful AI model via the Together API.
 
