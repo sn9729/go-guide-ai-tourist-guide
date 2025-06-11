@@ -8,15 +8,26 @@ document.getElementById("tripForm").addEventListener("submit", async function (e
   const interests = document.getElementById("interests").value.trim();
   const outputDiv = document.getElementById("output");
 
-  outputDiv.innerHTML = "⏳ Generating";
+
+  outputDiv.innerHTML = '<div class="output-box"><div class="loading">🧠 AI is crafting your perfect itinerary</div></div>';
 
   const apiKey = "tgp_v1_b9KWNtGAZjAWI4dI8RnlQA5eyCKMKyMDQVbXPiYzvNQ"; // 🔑 Replace with your real API key
   const prompt = `
-You are a smart AI travel planner.
+You are a smart AI travel planner with expertise in creating detailed, personalized travel experiences.
 
-Plan a ${days}-day trip from ${source} to ${destination}.
-Budget: Rupees ${budget}. Interests: ${interests}.
-Provide a daily travel itinerary with recommendations and approximate costs.
+Plan a comprehensive ${days}-day trip from ${source} to ${destination}.
+Budget: ₹${budget}
+Interests: ${interests}
+
+Please provide:
+- A detailed daily itinerary with specific activities and timings
+- Budget breakdown for each day
+- Local cuisine recommendations
+- Transportation suggestions
+- Cultural tips and must-see attractions
+- Estimated costs for activities, meals, and accommodation
+
+Format the response in a clear, organized manner with emojis to make it visually appealing within 6000 tokens.
 `;
 
   try {
@@ -27,21 +38,32 @@ Provide a daily travel itinerary with recommendations and approximate costs.
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "meta-llama/Llama-3.3-70B-Instruct-Turbo", // 🦙 Changed model here
+        model: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
         messages: [{ role: "user", content: prompt }],
         temperature: 0.7,
-        max_tokens: 1000
+        max_tokens: 6000
       })
     });
 
     const data = await response.json();
     if (data.choices && data.choices[0] && data.choices[0].message) {
-      outputDiv.innerHTML = `<pre>${data.choices[0].message.content.trim()}</pre>`;
+      outputDiv.innerHTML = `<div class="output-box">${data.choices[0].message.content.trim()}</div>`;
     } else {
-      outputDiv.innerHTML = "⚠️ No valid response from AI.";
+      outputDiv.innerHTML = '<div class="output-box">⚠️ Unable to generate your travel plan. Please try again with different details.</div>';
     }
   } catch (error) {
     console.error("Error:", error);
-    outputDiv.innerHTML = "❌ Error generating. Please try again.";
+    outputDiv.innerHTML = '<div class="output-box">❌ Something went wrong while planning your trip. Please check your connection and try again.</div>';
   }
+});
+
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('focus', function() {
+    this.parentElement.style.transform = 'scale(1.02)';
+  });
+  
+  input.addEventListener('blur', function() {
+    this.parentElement.style.transform = 'scale(1)';
+  });
 });
