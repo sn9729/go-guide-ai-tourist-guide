@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Guide - AI Travel Planner</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="config.js"></script>
 </head>
+
 <body>
 
   <div class="bg-elements">
@@ -29,27 +34,27 @@
           <div class="form-icon">📍</div>
           <input type="text" id="source" placeholder="From where are you starting your journey?" required>
         </div>
-        
+
         <div class="form-group">
           <div class="form-icon">🎯</div>
           <input type="text" id="destination" placeholder="Where would you like to explore?" required>
         </div>
-        
+
         <div class="form-group">
           <div class="form-icon">📅</div>
           <input type="number" id="days" placeholder="How many days will you be traveling?" required min="1">
         </div>
-        
+
         <div class="form-group">
           <div class="form-icon">💰</div>
           <input type="number" id="budget" placeholder="What's your total budget? (₹)" required min="1">
         </div>
-        
+
         <div class="form-group">
           <div class="form-icon">❤️</div>
           <input type="text" id="interests" placeholder="What interests you?">
         </div>
-        
+
         <button type="submit" class="submit-btn">
           ✨ Create My Perfect Trip
         </button>
@@ -58,9 +63,14 @@
 
     <div class="output-section">
       <div id="output"></div>
+      <div id="actionButtons" class="action-buttons hidden">
+        <button id="copyBtn" class="action-btn"><i class="fas fa-copy"></i> Copy</button>
+        <button id="printBtn" class="action-btn"><i class="fas fa-print"></i> Print</button>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

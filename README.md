@@ -1,31 +1,67 @@
-🌍 Go Guide - AI Travel Planner (https://goguideai.vercel.app)
+# 🌍 Go Guide - AI Travel Planner
 
-Go Guide is a simple, responsive web app that uses AI to help users plan personalized travel itineraries. Users input their trip details—like source, destination, number of days, budget, and interests—and the app fetches a detailed, day-wise itinerary using a powerful AI model via the Together API.
+**Go Guide** is a modern, AI-powered web application that helps you plan personalized travel itineraries in seconds. Powered by the **Llama-3.3-70B** model via the Together API, it generates detailed day-by-day plans tailored to your budget, interests, and schedule.
 
-🚀 Features
+![Go Guide Banner](https://img.shields.io/badge/AI-Travel_Planner-ff3333?style=for-the-badge)
 
-Easy-to-use interface with clean, responsive design.
+## 🚀 Features
 
-Integrates with LLaMA-3.3-70B-Instruct-Turbo via Together API for intelligent itinerary generation.
+- **Personalized Itineraries**: Generates comprehensive travel plans based on destination, duration, budget, and interests.
+- **Smart AI Integration**: Uses state-of-the-art LLMs to provide local insights, cuisine recommendations, and cultural tips.
+- **Secure Configuration**: Uses a local `config.js` file to securely manage your API key. No keys are exposed in the UI or code.
+- **Beautiful UI**: A responsive, dark-themed interface with smooth animations and glassmorphism effects.
+- **Markdown Rendering**: Itineraries are formatted beautifully with bold text, lists, and headers.
+- **Export Options**: Easily **Copy** your itinerary to the clipboard or **Print/Save as PDF** (optimized for print).
 
-Custom recommendations based on your budget and interests.
+## 🛠️ Tech Stack
 
-Daily breakdown of travel plans including estimated costs.
+- **Frontend**: HTML5, CSS3 (Custom Variables, Animations), JavaScript (ES6+)
+- **AI Model**: Llama-3.3-70B-Instruct-Turbo via [Together AI](https://www.together.ai/)
+- **Libraries**: [Marked.js](https://marked.js.org/) for Markdown rendering, [FontAwesome](https://fontawesome.com/) for icons.
 
-🛠 Tech Stack
+## ⚙️ Setup & Usage
 
-HTML for structure
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/sn9729/go-guide-ai-tourist-guide.git
+    cd go-guide-ai-tourist-guide
+    ```
 
-CSS for styling
+2.  **Get a Together API Key**
+    - Sign up at [Together AI](https://api.together.xyz/).
+    - Create a new API key in your dashboard.
 
-JavaScript for interactivity and API integration
+3.  **Configure API Key**
+    - Rename `config.example.js` to `config.js`:
+      ```bash
+      mv config.example.js config.js
+      # OR on Windows
+      rename config.example.js config.js
+      ```
+    - Open `config.js` and paste your API key:
+      ```javascript
+      const CONFIG = {
+        API_KEY: "YOUR_ACTUAL_API_KEY_HERE"
+      };
+      ```
+    - *Note: `config.js` is ignored by Git to keep your key secure.*
 
-Together API for AI-generated travel plans
+4.  **Run the App**
+    - Simply open `index.html` in your web browser.
+    - OR use a local server (recommended for best performance):
+      ```bash
+      npx serve .
+      ```
 
-📂 Files Included
+5.  **Plan Your Trip!**
+    - Enter your trip details (Source, Destination, Days, Budget, Interests).
+    - Click **Create My Perfect Trip**.
+    - Watch the AI craft your itinerary! ✈️
 
-index.html – The main web page with the form and display area.
+## 📸 Screenshots
 
-style.css – Stylesheet for a clean and modern UI.
+*(Add screenshots of your app here)*
 
-script.js – JavaScript logic for form handling and API requests.
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
