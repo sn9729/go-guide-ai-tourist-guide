@@ -60,7 +60,7 @@
 
 ## 📸 Screenshots
 
-*(Add screenshots of your app here)*
+![Go Guide Homepage](assets/screenshot.png)
 
 ## 📄 License
 
