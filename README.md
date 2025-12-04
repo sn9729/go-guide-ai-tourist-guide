@@ -60,7 +60,8 @@
 
 ## 📸 Screenshots
 
-![Go Guide Homepage](assets/screenshot.png)
+![Go Guide Homepage]
+<img width="1865" height="975" alt="image" src="https://github.com/user-attachments/assets/24f74bdf-ebba-4fcd-bc3d-5a5bfd83d679" />
 
 ## 📄 License
 
